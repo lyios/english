@@ -13,7 +13,7 @@ st.write('がんばってください！')
 # Load the data
 @st.cache
 def load_data():
-    return pd.read_excel("英検準二級　英単語.xlsx")
+    return pd.read_excel("英検準二級英単語.xlsx")
 
 words_df = load_data()
 
