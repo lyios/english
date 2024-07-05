@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.set_page_config(page_title="古文単語ガチャ")
+st.set_page_config(page_title="英検準二級英単語ガチャ")
 
 # タイトルと説明
-st.title('古文単語ガチャ')
+st.title('英検準二級英単語ガチャ')
 
-st.write('古文単語をランダムに表示して、勉強をサポートします！')
+st.write('英単語をランダムに表示して、勉強をサポートします！')
 st.write('がんばってください！')
 
 # Load the data
