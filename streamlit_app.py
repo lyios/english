@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import streamlit as st
+
+# セッション状態の初期化
+if 'display_meaning' not in st.session_state:
+    st.session_state.display_meaning = False  # デフォルト値で初期化
 
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
