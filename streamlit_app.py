@@ -46,3 +46,6 @@ if 'selected_word' in st.session_state:
 
     if st.button('例文を見る'):
         st.session_state.display_meaning = True
+
+    if st.session_state.dispiay_meaning:
+        st.write(f"例文: {st.session_state.selected_word['例文']}")
