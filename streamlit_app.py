@@ -13,7 +13,7 @@ st.write('がんばってください！')
 # Load the data
 @st.cache
 def load_data():
-    return pd.read_excel("英検準二級英単語.xlsx")
+    return pd.read_excel("a.xlsx")
 
 words_df = load_data()
 
@@ -42,4 +42,7 @@ if 'selected_word' in st.session_state:
         st.session_state.display_meaning = True
 
     if st.session_state.display_meaning:
-        st.write(f"意味: {st.session_state.selected_word['意味']}")
+        st.write(f"日本語訳: {st.session_state.selected_word['日本語訳']}")
+
+    if st.button('例文を見る'):
+        st.session_state.display_meaning = True
