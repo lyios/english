@@ -2,10 +2,27 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import streamlit as st
+import streamlit as st
 
 # セッション状態の初期化
-if 'display_meaning' not in st.session_state:
-    st.session_state.display_meaning = False  # デフォルト値で初期化
+def initialize_session_state():
+    if 'display_meaning' not in st.session_state:
+        st.session_state.display_meaning = False  # デフォルト値で初期化
+
+# Streamlitアプリのメイン部分
+def main():
+    initialize_session_state()  # セッション状態の初期化を呼び出す
+
+    st.title('意味の表示を制御するアプリ')
+
+    if st.button('意味を切り替える'):
+        st.session_state.display_meaning = not st.session_state.display_meaning
+
+    if st.session_state.display_meaning:
+        st.write("意味を表示中...")
+
+if __name__ == '__main__':
+    main()
 
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
