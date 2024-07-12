@@ -53,5 +53,5 @@ if 'selected_word' in st.session_state:
         st.session_state.display_meaning = True
 
     st.write("以下が例文です:")
-    for index, row in df.iterrows():
+    for index, row in 例文.iterrows():
         st.write(row['例文'])
