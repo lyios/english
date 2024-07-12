@@ -41,7 +41,6 @@ if st.button('ガチャを引く！'):
 if 'selected_word' in st.session_state:
     st.header(f"単語名: {st.session_state.selected_word['単語']}")
     st.subheader(f"レア度: {st.session_state.selected_word['レア度']}")
-    st.subheader(f"例文: {st.session_state.selected_word['例文']}")
 
     # 意味を確認するボタンを追加
     if st.button('意味を確認する'):
@@ -53,5 +52,6 @@ if 'selected_word' in st.session_state:
     if st.button('例文を見る'):
         st.session_state.display_meaning = True
 
-    if st.session_state.dispiay_meaning:
-        st.write(f"例文: {st.session_state.selected_word['例文']}")
+    st.write("以下が例文です:")
+    for index, row in df.iterrows():
+        st.write(row['例文'])
