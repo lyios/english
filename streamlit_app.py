@@ -49,7 +49,8 @@ if 'selected_word' in st.session_state:
     if st.session_state.display_meaning:
         st.write(f"日本語訳: {st.session_state.selected_word['日本語訳']}")
 
-   if st.button("例文を見る"):
-    st.write("以下が例文です:")
-    for index, row in df.iterrows():
-        st.write(row['例文'])
+    if st.button('例文を見る'):
+        st.session_state.display_meaning = True
+
+    if st.session_state.display_meaning:
+        st.write(f"例文: {st.session_state.selected_word['例文']}")
