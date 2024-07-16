@@ -49,15 +49,6 @@ if 'selected_word' in st.session_state:
     if st.session_state.display_meaning:
         st.write(f"日本語訳: {st.session_state.selected_word['日本語訳']}")
 
-   if st.button('意味を確認する'):
-    st.session_state.display_meaning = 'meaning'
-
-if st.session_state.display_meaning == 'meaning':
-    if '日本語訳' in st.session_state.selected_word:
-        st.write(f"日本語訳: {st.session_state.selected_word['日本語訳']}")
-    else:
-        st.write("日本語訳がありません")
-
 if st.button('英文を見る'):
     st.session_state.display_meaning = 'english'
 
