@@ -53,4 +53,4 @@ if 'selected_word' in st.session_state:
         st.session_state.display_meaning = True
 
     if '英文' in st.session_state.selected_word:
-    st.write(f"英文: {st.session_state.selected_word['英文']}")
+        st.write(f"英文: {st.session_state.selected_word['英文']}")
