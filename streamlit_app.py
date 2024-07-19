@@ -46,8 +46,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-# タイトルと説明
-st.title('英検準二級英単語ガチャ')
+if st.session_state.get('quest_completed', False):
+    st.title('英検準二級英単語ガチャ')
 
 def draw_gacha():
     st.write('英単語をランダムに表示して、勉強をサポートします！')
