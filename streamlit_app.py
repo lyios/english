@@ -11,42 +11,33 @@ st.set_page_config(page_title="英検準二級英単語ガチャ")
 
 def quest():
     st.title('クエストへようこそ!')
-    st.write("You are at a crossroad. Which path will you choose?")
+    st.write("あなたは岐路に立っている。どの道を選ぶのか？")
     option = st.radio(
-        "Choose your path:",
-        ("Go left", "Go right")
+        "道を選ぶ:",
+        ("左へ", "右へ")
     )
 
-    if option == "Go left":
-        st.write("You encounter a friendly merchant.")
+    if option == "左へ":
+        st.write("親切な商人に出会う.")
         action = st.selectbox(
-            "What will you do?",
-            ("Buy something", "Ignore and continue")
+            "どうする?",
+            ("何かを買う", "無視して続ける")
         )
-        if action == "Buy something":
-            st.write("You bought a magical sword!")
+        if action == "何かを買う":
+            st.write("魔法の剣を買った!")
         else:
-            st.write("You continue your journey.")
+            st.write("あなたは旅を続ける")
 
-    elif option == "Go right":
-        st.write("You find a treasure chest.")
+    elif option == "右へ":
+        st.write("宝箱を見つける")
         action = st.selectbox(
-            "What will you do?",
-            ("Open the chest", "Leave it")
+            "どうする?",
+            ("チェストを開ける", "そのままにする")
         )
-        if action == "Open the chest":
-            st.write("You found a map to the hidden city!")
+        if action == "チェストを開ける":
+            st.write("あなたは隠された都市への地図を見つけた!")
         else:
-            st.write("You decide to leave it.")
-
-# メインのStreamlitアプリ
-def main():
-    st.header("Quest Maker App")
-    st.subheader("Create your own interactive quest!")
-    quest()
-
-if __name__ == "__main__":
-    main()
+            st.write("そのままにしておく.")
 
 # タイトルと説明
 st.title('英検準二級英単語ガチャ')
