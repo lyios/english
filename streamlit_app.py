@@ -9,6 +9,9 @@ if 'display_meaning' not in st.session_state:
 
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
+def quest():
+    st.title('クエストへようこそ!')
+
 # タイトルと説明
 st.title('英検準二級英単語ガチャ')
 
