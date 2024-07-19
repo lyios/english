@@ -38,6 +38,13 @@ def quest():
             st.write("あなたは隠された都市への地図を見つけた!")
         else:
             st.write("そのままにしておく.")
+def main():
+    st.header("Quest Maker App")
+    st.subheader("Create your own interactive quest!")
+    quest()
+
+if __name__ == "__main__":
+    main()
 
 # タイトルと説明
 st.title('英検準二級英単語ガチャ')
