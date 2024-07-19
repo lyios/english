@@ -43,9 +43,6 @@ def main():
     st.subheader("Create your own interactive quest!")
     quest()
 
-if __name__ == "__main__":
-    main()
-
 if st.session_state.get('quest_completed', False):
     st.title('英検準二級英単語ガチャ')
 
@@ -104,3 +101,6 @@ if 'selected_word' in st.session_state:
             st.write(f"日本文: {st.session_state.selected_word['日本文']}")
         else:
             st.write("日本文がありません")
+
+if __name__ == "__main__":
+    main()
