@@ -12,10 +12,8 @@ st.set_page_config(page_title="英検準二級英単語ガチャ")
 def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
-    
-    if st.button('回答する'):
-        st.session_state.display_meaning = True
-        
+    choice = st.selectbox('単語の種類を選んでください', ['動詞', '形容詞', '副詞'])
+
 def main():
     st.header("question")
     st.subheader("Create your own interactive question!")
