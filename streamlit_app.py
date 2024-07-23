@@ -12,15 +12,15 @@ st.set_page_config(page_title="英検準二級英単語ガチャ")
 def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
-    with open('動詞', 'r', encoding='utf-8') as f:
+    with open('verbs.txt', 'r', encoding='utf-8') as f:
         verbs = [line.strip() for line in f]
 
     # 形容詞のリストを読み込む
-    with open('形容詞', 'r', encoding='utf-8') as f:
+    with open('adjectives.txt', 'r', encoding='utf-8') as f:
         adjectives = [line.strip() for line in f]
 
     # 副詞のリストを読み込む
-    with open('副詞', 'r', encoding='utf-8') as f:
+    with open('adverbs.txt', 'r', encoding='utf-8') as f:
         adverbs = [line.strip() for line in f]
     choice = st.selectbox('単語の品詞を選んでください', ['動詞', '形容詞', '副詞'])
 
