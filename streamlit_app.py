@@ -9,7 +9,7 @@ if 'display_meaning' not in st.session_state:
 
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
-def quest():
+def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
     option = st.radio(
@@ -38,7 +38,10 @@ def quest():
             st.write("あなたは隠された都市への地図を見つけた!")
         else:
             st.write("そのままにしておく.")
-
+def main():
+    st.header("Quest Maker App")
+    st.subheader("Create your own interactive quest!")
+    question()
 
 if st.session_state.get('quest_completed', False):
     st.title('英検準二級英単語ガチャ')
