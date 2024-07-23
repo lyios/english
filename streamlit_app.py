@@ -14,7 +14,27 @@ def question():
     st.write("この単語の品詞は何でしょう？")
 
     choice = st.selectbox('単語の品詞を選んでください', ['動詞', '形容詞', '副詞'])
+    # 動詞のリストを読み込む
+    with open('verbs.txt', 'r', encoding='utf-8') as f:
+        verbs = [line.strip() for line in f]
 
+    # 形容詞のリストを読み込む
+    with open('adjectives.txt', 'r', encoding='utf-8') as f:
+        adjectives = [line.strip() for line in f]
+
+    # 副詞のリストを読み込む
+    with open('adverbs.txt', 'r', encoding='utf-8') as f:
+        adverbs = [line.strip() for line in f]
+
+    # ユーザーが選択するセレクトボックスを作成
+    choice = st.selectbox('単語の種類を選んでください', ['動詞', '形容詞', '副詞'])
+
+    if choice == '動詞':
+        st.write('選んだ動詞:', st.random.choice(verbs))
+    elif choice == '形容詞':
+        st.write('選んだ形容詞:', st.random.choice(adjectives))
+    elif choice == '副詞':
+        st.write('選んだ副詞:', st.random.choice(adverbs))
 def main():
     st.header("question")
     st.subheader("Create your own interactive question!")
