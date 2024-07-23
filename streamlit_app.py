@@ -12,7 +12,7 @@ st.set_page_config(page_title="英検準二級英単語ガチャ")
 def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
-    choice = st.selectbox('単語の種類を選んでください', ['動詞', '形容詞', '副詞'])
+    choice = st.selectbox('単語の品詞を選んでください', ['動詞', '形容詞', '副詞'])
 
 def main():
     st.header("question")
