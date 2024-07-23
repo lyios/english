@@ -10,8 +10,8 @@ if 'display_meaning' not in st.session_state:
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
 def quest():
-    st.title('クエストへようこそ!')
-    st.write("あなたは岐路に立っている。どの道を選ぶのか？")
+    st.title('英単語クイズ')
+    st.write("この単語の品詞は何でしょう？")
     option = st.radio(
         "道を選ぶ:",
         ("左へ", "右へ")
