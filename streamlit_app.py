@@ -39,8 +39,8 @@ def question():
         else:
             st.write("そのままにしておく.")
 def main():
-    st.header("Quest Maker App")
-    st.subheader("Create your own interactive quest!")
+    st.header("question")
+    st.subheader("Create your own interactive question!")
     question()
 
 if st.session_state.get('quest_completed', False):
