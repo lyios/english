@@ -12,32 +12,12 @@ st.set_page_config(page_title="英検準二級英単語ガチャ")
 def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
-    option = st.radio(
-        "道を選ぶ:",
-        ("左へ", "右へ")
-    )
-
-    if option == "左へ":
-        st.write("親切な商人に出会う.")
-        action = st.selectbox(
-            "どうする?",
-            ("何かを買う", "無視して続ける")
-        )
-        if action == "何かを買う":
-            st.write("魔法の剣を買った!")
-        else:
-            st.write("あなたは旅を続ける")
-
-    elif option == "右へ":
-        st.write("宝箱を見つける")
-        action = st.selectbox(
-            "どうする?",
-            ("チェストを開ける", "そのままにする")
-        )
-        if action == "チェストを開ける":
-            st.write("あなたは隠された都市への地図を見つけた!")
-        else:
-            st.write("そのままにしておく.")
+    @st.cache
+    def load_data():
+        return pd.read_excel("ブック.xlsx")
+    if st.button('回答する'):
+        st.session_state.display_meaning = True
+        
 def main():
     st.header("question")
     st.subheader("Create your own interactive question!")
