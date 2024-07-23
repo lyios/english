@@ -12,9 +12,7 @@ st.set_page_config(page_title="英検準二級英単語ガチャ")
 def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
-    @st.cache
-    def load_data():
-        return pd.read_excel("ブック.xlsx")
+    
     if st.button('回答する'):
         st.session_state.display_meaning = True
         
