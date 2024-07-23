@@ -13,7 +13,6 @@ def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
 
-    choice = st.selectbox('単語の品詞を選んでください', ['動詞', '形容詞', '副詞'])
     # 動詞のリストを読み込む
     with open('verbs.txt', 'r', encoding='utf-8') as f:
         verbs = [line.strip() for line in f]
