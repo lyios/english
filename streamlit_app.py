@@ -14,15 +14,15 @@ def question():
     st.write("この単語の品詞は何でしょう？")
 
     # 動詞のリストを読み込む
-    with open('verbs.txt', 'r', encoding='utf-8') as f:
+    with open('動詞.txt', 'r', encoding='utf-8') as f:
         verbs = [line.strip() for line in f]
 
     # 形容詞のリストを読み込む
-    with open('adjectives.txt', 'r', encoding='utf-8') as f:
+    with open('形容詞.txt', 'r', encoding='utf-8') as f:
         adjectives = [line.strip() for line in f]
 
     # 副詞のリストを読み込む
-    with open('adverbs.txt', 'r', encoding='utf-8') as f:
+    with open('副詞.txt', 'r', encoding='utf-8') as f:
         adverbs = [line.strip() for line in f]
 
     # ユーザーが選択するセレクトボックスを作成
