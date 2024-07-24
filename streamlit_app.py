@@ -13,15 +13,29 @@ def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
 
-    # ユーザーが選択するセレクトボックスを作成
-    choice = st.selectbox('単語の種類を選んでください', ['動詞', '形容詞', '副詞'])
+def get_random_word(df):
+    # ランダムに単語を選ぶ
+    row = df.sample(n=1).iloc[0]
+    word = row['単語']
+    pos = row['品詞']
+    return word, pos
 
-    if choice == '動詞':
-        st.write('選んだ動詞:', st.random.choice(verbs))
-    elif choice == '形容詞':
-        st.write('選んだ形容詞:', st.random.choice(adjectives))
-    elif choice == '副詞':
-        st.write('選んだ副詞:', st.random.choice(adverbs))
+file_path ='a.xlsx'
+word_data = (file_path)
+
+word, correct_pos = get_random_word(word_data)
+
+user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'])
+
+    # 回答のチェックとフィードバックを表示
+if user_answer == correct_pos:
+        st.success("正解です！")
+else:
+        st.error(f"不正解です。正解は「{correct_pos}」です。")
+
+st.write(f"単語: {word}")
+
+
 def main():
     st.header("question")
     st.subheader("Create your own interactive question!")
