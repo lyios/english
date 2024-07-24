@@ -13,6 +13,11 @@ def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
 
+    # Load the data
+    @st.cache
+    def word_data():
+        return pd.read_excel("a.xlsx")
+
     def get_random_word(df):
         # ランダムに単語を選ぶ
         row = df.sample(n=1).iloc[0]
