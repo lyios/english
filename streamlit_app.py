@@ -13,27 +13,27 @@ def question():
     st.title('英単語クイズ')
     st.write("この単語の品詞は何でしょう？")
 
-def get_random_word(df):
-    # ランダムに単語を選ぶ
-    row = df.sample(n=1).iloc[0]
-    word = row['単語']
-    pos = row['品詞']
-    return word, pos
+    def get_random_word(df):
+        # ランダムに単語を選ぶ
+        row = df.sample(n=1).iloc[0]
+        word = row['単語']
+        pos = row['品詞']
+        return word, pos
 
-file_path ='a.xlsx'
-word_data = pd.read_excel(file_path)
+    file_path ='a.xlsx'
+    word_data = pd.read_excel(file_path)
 
-word, correct_pos = get_random_word(word_data)
+    word, correct_pos = get_random_word(word_data)
 
-user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'])
+    user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'])
 
     # 回答のチェックとフィードバックを表示
-if user_answer == correct_pos:
-        st.success("正解です！")
-else:
-        st.error(f"不正解です。正解は「{correct_pos}」です。")
+    if user_answer == correct_pos:
+            st.success("正解です！")
+    else:
+            st.error(f"不正解です。正解は「{correct_pos}」です。")
 
-st.write(f"単語: {word}")
+    st.write(f"単語: {word}")
 
 
 def main():
