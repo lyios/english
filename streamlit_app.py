@@ -36,9 +36,9 @@ def question():
 
     # 回答のチェックとフィードバックを表示
     if user_answer == correct_pos:
-            st.success("正解です！")
+                st.success("正解です！")
     else:
-            st.error(f"不正解です。正解は「{correct_pos}」です。")
+                st.error(f"不正解です。正解は「{correct_pos}」です。")
 
 def main():
     st.header("question")
