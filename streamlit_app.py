@@ -21,7 +21,7 @@ def get_random_word(df):
     return word, pos
 
 file_path ='a.xlsx'
-word_data = (file_path)
+word_data = pd.read_excel(file_path)
 
 word, correct_pos = get_random_word(word_data)
 
