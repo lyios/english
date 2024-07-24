@@ -46,6 +46,8 @@ def main():
     st.subheader("Create your own interactive question!")
     question()
 
+st.empty()
+
 if st.session_state.get('quest_completed', False):
     st.title('英検準二級英単語ガチャ')
 
