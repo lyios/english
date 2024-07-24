@@ -16,7 +16,7 @@ def question():
     # Load the data
     @st.cache
     def word_data():
-        return pd.read_excel("a.xlsx")
+        return pd.read_excel("ブック.xlsx")
 
     def get_random_word(df):
         # ランダムに単語を選ぶ
@@ -25,7 +25,7 @@ def question():
         pos = row['品詞']
         return word, pos
 
-    file_path ='a.xlsx'
+    file_path ='ブック.xlsx'
     word_data = pd.read_excel(file_path)
 
     word, correct_pos = get_random_word(word_data)
