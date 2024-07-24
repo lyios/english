@@ -37,6 +37,7 @@ def question():
     # 回答のチェックとフィードバックを表示
     if user_answer == correct_pos:
         st.success("正解です！")
+        st.session_state.quest_completed = True
     else:
         st.error(f"不正解です。正解は「{correct_pos}」です。")
 
