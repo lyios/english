@@ -45,6 +45,7 @@ def question():
     if user_answer == correct_pos:
         st.success("正解です！")
         st.session_state.quest_completed = True
+        st.session_state.selected_word = {'単語': word, '品詞': correct_pos} 
     else:
         st.error(f"不正解です。正解は「{correct_pos}」です。")
 
@@ -57,6 +58,11 @@ st.empty()
 
 if st.session_state.get('quest_completed', False):
     st.title('英検準二級英単語ガチャ')
+
+    if st.session_state.quest_completed:
+        draw_gacha()
+    else:
+        question()
 
     def draw_gacha():
         st.write('英単語をランダムに表示して、勉強をサポートします！')
