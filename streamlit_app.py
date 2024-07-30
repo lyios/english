@@ -114,8 +114,5 @@ def question():
 
     if __name__ == "__main__":
         main()        
-        
-    else:
-        st.error(f"不正解です。正解は「{correct_pos}」です。")
 
 question()
