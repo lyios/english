@@ -56,11 +56,10 @@ def draw_gacha():
 def main():
     st.header("英検準二級英単語ガチャ")
 
+    question() 
+
     if st.session_state.quest_completed:
         draw_gacha()
-    else:
-        question()
-
 
     # Load the data
     @st.cache
