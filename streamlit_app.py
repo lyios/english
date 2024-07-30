@@ -50,7 +50,7 @@ def question():
     else:
         st.error(f"不正解です。正解は「{correct_pos}」です。")
 
-    def draw_gacha():
+def draw_gacha():
         st.write('英単語をランダムに表示して、勉強をサポートします！')
         st.write('がんばってください！')
 
@@ -106,13 +106,14 @@ def question():
                 else:
                     st.write("日本文がありません")
 
-    def main():
+def main():
         st.header("英検準二級英単語ガチャ")
 
         if st.session_state.quest_completed:
             draw_gacha()
 
-    if __name__ == "__main__":
+        question()
+
+if __name__ == "__main__":
         main()        
 
-question()
