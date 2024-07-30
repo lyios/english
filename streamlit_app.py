@@ -47,11 +47,11 @@ def question():
         st.session_state.quest_completed = True
         st.session_state.selected_word = {'単語': word, '品詞': correct_pos}
 
-    def draw_gacha():
+def draw_gacha():
         st.write('英単語をランダムに表示して、勉強をサポートします！')
         st.write('がんばってください！')
 
-    def main():
+def main():
         st.header("英検準二級英単語ガチャ")
 
     # Load the data
