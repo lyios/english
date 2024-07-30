@@ -39,7 +39,7 @@ def question():
 
     st.write(f"単語: {word}")
 
-    user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'])
+    user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'],key="radio")
 
     # 回答のチェックとフィードバックを表示
     if user_answer == correct_pos:
