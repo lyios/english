@@ -69,18 +69,12 @@ def question():
             chosen_rarity = np.random.choice(list(rarity_probs.keys()), p=list(rarity_probs.values()))
             subset_df = words_df[words_df['レア度'] == chosen_rarity]
     
-        if st.session_state.selected_word is None:
-                selected_word = subset_df.sample().iloc[0]
-                st.session_state.selected_word = selected_word
-        else:
-            # selected_word が既にセットされている場合は何もしない
-            pass
-    
         # セッションステートに選択された単語を保存
+            selected_word = subset_df.sample().iloc[0]
             st.session_state.selected_word = selected_word
             st.session_state.display_meaning = False
 
-        if 'selected_word' in st.session_state:
+        if st.session_state.selected_word is None:
             st.header(f"単語名: {st.session_state.selected_word['単語']}")
             st.subheader(f"レア度: {st.session_state.selected_word['レア度']}")
    
