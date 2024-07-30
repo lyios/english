@@ -49,13 +49,6 @@ def question():
     else:
         st.error(f"不正解です。正解は「{correct_pos}」です。")
 
-def main():
-    st.header("question")
-    st.subheader("Create your own interactive question!")
-    question()
-
-st.empty()
-
 if st.session_state.get('quest_completed', False):
     st.title('英検準二級英単語ガチャ')
 
