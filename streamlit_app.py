@@ -4,7 +4,7 @@ import numpy as np
 import streamlit as st
 
 # セッション状態の初期化
-if 'question_completed' not in st.session_state:
+if 'quest_completed' not in st.session_state:
     st.session_state.quest_completed = False
 
 if 'display_meaning' not in st.session_state:
