@@ -59,10 +59,14 @@ st.empty()
 if st.session_state.get('quest_completed', False):
     st.title('英検準二級英単語ガチャ')
 
+def main():
+    st.header("英検準二級英単語ガチャ")
+
     if st.session_state.quest_completed:
         draw_gacha()
     else:
         question()
+
 
     def draw_gacha():
         st.write('英単語をランダムに表示して、勉強をサポートします！')
