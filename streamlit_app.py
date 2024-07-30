@@ -49,12 +49,9 @@ def question():
     else:
         st.error(f"不正解です。正解は「{correct_pos}」です。")
 
-if st.session_state.get('quest_completed', False):
-    st.title('英検準二級英単語ガチャ')
-
-    def draw_gacha():
-        st.write('英単語をランダムに表示して、勉強をサポートします！')
-        st.write('がんばってください！')
+def draw_gacha():
+    st.write('英単語をランダムに表示して、勉強をサポートします！')
+    st.write('がんばってください！')
 
 def main():
     st.header("英検準二級英単語ガチャ")
