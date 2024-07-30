@@ -106,13 +106,12 @@ def draw_gacha():
                 else:
                     st.write("日本文がありません")
 
-        if st.session_state.quest_completed:
-            draw_gacha()
-
 def main():
         st.header("英検準二級英単語ガチャ")
 
         question()
+        if st.session_state.quest_completed:
+            draw_gacha()
 
         
 if __name__ == "__main__":
