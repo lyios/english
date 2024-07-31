@@ -79,7 +79,7 @@ def question():
         return pd.read_excel("ブック.xlsx")
 
     def get_random_word(df):
-        # ランダムに単語を選ぶ
+
         row = df.sample(n=1).iloc[0]
         word = row['単語']
         pos = row['品詞']
@@ -90,15 +90,15 @@ def question():
 
     word, correct_pos = get_random_word(word_data)
 
-    st.write(f"単語: {word}")
+    if st.button('単語を表示する'):
+        st.write(f"単語: {word}")
 
     all_pos = ['動詞', '形容詞', '副詞']
     
-    # 正解の品詞を選択肢に含める
+        # 正解の品詞を選択肢に含める
     options = list(set(all_pos) - {correct_pos})
     options.append(correct_pos)
-    np.random.shuffle(options)  # 選択肢をシャッフル
-
+    np.random.shuffle(options)  
     user_answer = st.radio(
         "この単語の品詞は？",
         options=options,
