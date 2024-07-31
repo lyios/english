@@ -115,7 +115,7 @@ def question():
 
 
 def main():
-        st.header("英検準二級英単語ガチャ")
+        st.header("品詞クイズと英単語ガチャ")
         question()
 
 if __name__ == "__main__":
