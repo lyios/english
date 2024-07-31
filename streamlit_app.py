@@ -115,6 +115,12 @@ def main():
         st.header("品詞クイズと英単語ガチャ")
         question()
 
+if st.session_state.quest_completed:
+        st.header("ガチャ")
+        draw_gacha()
+else:
+        st.write("品詞クイズに正解すると、英単語ガチャを引けます。")
+
 if __name__ == "__main__":
         main()        
 
