@@ -48,8 +48,8 @@ def draw_gacha():
             st.subheader(f"レア度: {st.session_state.selected_word['レア度']}")
    
         # 意味を確認するボタンを追加
-        if st.button('意味を確認する'):
-            st.session_state.display_meaning = True
+            if st.button('意味を確認する'):
+                st.session_state.display_meaning = True
 
         if st.session_state.display_meaning:
             st.write(f"日本語訳: {st.session_state.selected_word['日本語訳']}")
