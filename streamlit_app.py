@@ -39,13 +39,9 @@ def draw_gacha():
             subset_df = words_df[words_df['レア度'] == chosen_rarity]
     
         # セッションステートに選択された単語を保存
-        if len(subset_df) > 0:
             selected_word = subset_df.sample().iloc[0]
             st.session_state.selected_word = selected_word
             st.session_state.display_meaning = False
-
-        else:
-            st.warning("該当する単語が見つかりませんでした。")
 
         if st.session_state.selected_word is None:
             st.header(f"単語名: {st.session_state.selected_word['単語']}")
