@@ -103,29 +103,24 @@ def question():
     options.append(correct_pos)
     np.random.shuffle(options)
 
-    if st.button('選択肢を表示する'):
-            st.session_state.show_options = True
 
-    if st.session_state.show_options:
-        if word and correct_pos:  
+    if user_answer:
+        if st.session_state.show_options:  
             user_answer = st.radio(
             "この単語の品詞は？",
             options=options,
             key="quiz_radio"
-        )
+    )
 
     # 回答のチェックとフィードバックを表示
-        if user_answer == correct_pos:
-            st.success("正解です！")
-            st.session_state.quest_completed = True
-            st.session_state.selected_word = {'単語': word, '品詞': correct_pos}
-            draw_gacha()
         
-        else:
-            st.error(f"不正解です。正解は「{correct_pos}」です。")
-
+        st.success("正解です！")
+        st.session_state.quest_completed = True
+        st.session_state.selected_word = {'単語': word, '品詞': correct_pos}
+        draw_gacha()
+        
     else:
-                st.error("単語が選ばれていないため、選択肢が表示できません。")
+            st.error(f"不正解です。正解は「{correct_pos}」です。")
 
 
 def main():
