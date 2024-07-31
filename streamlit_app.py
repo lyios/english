@@ -71,7 +71,6 @@ def draw_gacha():
                 st.write(f"日本文: {st.session_state.selected_word['日本文']}")
             else:
                 st.write("日本文がありません")
-        draw_gacha()
 
 def question():
     st.title('品詞クイズ')
