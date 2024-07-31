@@ -89,13 +89,13 @@ def question():
             word = row['単語']
             pos = row['品詞']
             return word, pos
+        
+        st.write(f"単語: {word}")
 
     file_path ='ブック.xlsx'
     word_data = pd.read_excel(file_path)
 
     word, correct_pos = get_random_word(word_data)
-
-    st.write(f"単語: {word}")
 
     all_pos = ['動詞', '形容詞', '副詞']
     
