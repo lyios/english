@@ -98,8 +98,13 @@ def question():
         # 正解の品詞を選択肢に含める
     options = list(set(all_pos) - {correct_pos})
     options.append(correct_pos)
-    np.random.shuffle(options)  
-    user_answer = st.radio(
+    np.random.shuffle(options)
+
+    if st.button('選択肢を表示する'):
+            st.session_state.show_options = True
+
+    if st.session_state.show_options:  
+        user_answer = st.radio(
         "この単語の品詞は？",
         options=options,
         key="quiz_radio"
