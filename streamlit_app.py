@@ -112,11 +112,11 @@ def question():
 
 
 def main():
-        st.header("品詞クイズと英単語ガチャ")
+        st.header("品詞クイズに正解すると、英単語ガチャを引けます。")
         question()
 
 if st.session_state.quest_completed:
-        st.header("品詞クイズに正解すると、英単語ガチャを引けます。")
+        st.header("品詞クイズと単語ガチャ")
         
 
 if __name__ == "__main__":
