@@ -92,10 +92,17 @@ def question():
 
     st.write(f"単語: {word}")
 
+    all_pos = ['動詞', '形容詞', '副詞']
+    
+    # 正解の品詞を選択肢に含める
+    options = list(set(all_pos) - {correct_pos})
+    options.append(correct_pos)
+    np.random.shuffle(options)  # 選択肢をシャッフル
+
     user_answer = st.radio(
-         "この単語の品詞は？", 
-        options=['動詞', '形容詞', '副詞'],
-        key="radio"
+        "この単語の品詞は？",
+        options=options,
+        key="quiz_radio"
     )
 
     # 回答のチェックとフィードバックを表示
