@@ -102,7 +102,7 @@ def question():
         st.success("正解です！")
         st.session_state.quest_completed = True
         st.session_state.selected_word = {'単語': word, '品詞': correct_pos}
-        draw_gacha(st.session_state.selected_word)
+        draw_gacha()
         
     else:
             st.error(f"不正解です。正解は「{correct_pos}」です。")
