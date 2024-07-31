@@ -9,10 +9,12 @@ if 'quest_completed' not in st.session_state:
 
 if 'selected_word' not in st.session_state:
     st.session_state.selected_word = None
-    st.session_state.display_meaning = False
 
 if 'gacha_word' not in st.session_state:
     st.session_state.gacha_word = None
+
+if 'display_meaning' not in st.session_state:
+    st.session_state.display_meaning = False
 
 
 st.set_page_config(page_title="品詞クイズと英単語ガチャ")
@@ -54,7 +56,7 @@ def draw_gacha():
             st.warning("該当する単語が見つかりませんでした。")
 
 
-        if 'gacha_word' in st.session_state and st.session_state.gacha_word is not None:
+        if st.session_state.gacha_word is not None:
             st.header(f"単語名: {st.session_state.selected_word['単語']}")
             st.subheader(f"レア度: {st.session_state.selected_word['レア度']}")
    
