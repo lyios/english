@@ -95,7 +95,11 @@ def question():
 
     st.write(f"単語: {word}")
 
-    user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'],key="radio")
+    user_answer = st.radio(
+         "この単語の品詞は？", 
+        options=['動詞', '形容詞', '副詞'],
+        key="radio"
+    )
 
     # 回答のチェックとフィードバックを表示
     if user_answer == correct_pos:
@@ -105,7 +109,7 @@ def question():
         draw_gacha()
         
     else:
-            st.error(f"不正解です。正解は「{correct_pos}」です。")
+        st.error(f"不正解です。正解は「{correct_pos}」です。")
 
     
 
