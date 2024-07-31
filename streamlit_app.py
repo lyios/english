@@ -108,16 +108,10 @@ def question():
     else:
         st.error(f"不正解です。正解は「{correct_pos}」です。")
 
-    
-
 
 def main():
         st.header("品詞クイズに正解すると、英単語ガチャを引けます。")
         question()
-
-if st.session_state.quest_completed:
-        st.header("品詞クイズと単語ガチャ")
-        
 
 if __name__ == "__main__":
         main()        
