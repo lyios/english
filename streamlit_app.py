@@ -11,6 +11,10 @@ if 'selected_word' not in st.session_state:
     st.session_state.selected_word = None
     st.session_state.display_meaning = False
 
+if 'gacha_word' not in st.session_state:
+    st.session_state.gacha_word = None
+
+
 st.set_page_config(page_title="品詞クイズと英単語ガチャ")
 
 def draw_gacha():
