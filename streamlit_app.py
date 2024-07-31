@@ -116,7 +116,7 @@ def main():
         question()
 
 if st.session_state.quest_completed:
-        st.header("クイズとガチャ")
+        st.header("頑張ってください！")
         
 else:
         st.write("品詞クイズに正解すると、英単語ガチャを引けます。")
