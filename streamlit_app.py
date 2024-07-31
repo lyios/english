@@ -118,9 +118,6 @@ def main():
         st.header("英検準二級英単語ガチャ")
         question()
 
-if st.session_state.quest_completed:
-        st.header("正解した単語の詳細")
-       
 if __name__ == "__main__":
         main()        
 
