@@ -51,8 +51,8 @@ def draw_gacha():
             if st.button('意味を確認する'):
                 st.session_state.display_meaning = True
 
-        if st.session_state.display_meaning:
-            st.write(f"日本語訳: {st.session_state.selected_word['日本語訳']}")
+            if st.session_state.display_meaning:
+                st.write(f"日本語訳: {st.session_state.selected_word['日本語訳']}")
 
             if st.button('英文を見る'):
                 st.session_state.display_meaning = 'english'
