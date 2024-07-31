@@ -28,6 +28,8 @@ def draw_gacha():
 
         words_df = load_data()
 
+        subset_df = pd.DataFrame() 
+
     # ガチャ機能
         if st.button('ガチャを引く！'):
             if st.session_state.selected_word is None:
