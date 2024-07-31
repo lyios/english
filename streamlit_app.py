@@ -73,7 +73,7 @@ def draw_gacha():
                 st.write("日本文がありません")
 
 def question():
-    st.title('英単語クイズ')
+    st.title('品詞クイズ')
     st.write("この単語の品詞は何でしょう？")
 
     # Load the data
