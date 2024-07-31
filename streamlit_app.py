@@ -11,7 +11,7 @@ if 'selected_word' not in st.session_state:
     st.session_state.selected_word = None
     st.session_state.display_meaning = False
 
-st.set_page_config(page_title="英検準二級英単語ガチャ")
+st.set_page_config(page_title="品詞クイズと英単語ガチャ")
 
 def draw_gacha():
         st.write('英単語をランダムに表示して、勉強をサポートします！')
