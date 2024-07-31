@@ -11,6 +11,9 @@ if 'selected_word' not in st.session_state:
     st.session_state.selected_word = None
     st.session_state.display_meaning = False
 
+if 'show_options' not in st.session_state:
+    st.session_state.show_options = False
+
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
 def draw_gacha():
