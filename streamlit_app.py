@@ -16,40 +16,6 @@ if 'selected_word' not in st.session_state:
 
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
-def question():
-    st.title('英単語クイズ')
-    st.write("この単語の品詞は何でしょう？")
-
-    # Load the data
-    @st.cache
-    def word_data():
-        return pd.read_excel("ブック.xlsx")
-
-    def get_random_word(df):
-        # ランダムに単語を選ぶ
-        row = df.sample(n=1).iloc[0]
-        word = row['単語']
-        pos = row['品詞']
-        return word, pos
-
-    file_path ='ブック.xlsx'
-    word_data = pd.read_excel(file_path)
-
-    word, correct_pos = get_random_word(word_data)
-
-    st.write(f"単語: {word}")
-
-    user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'],key="radio")
-
-    # 回答のチェックとフィードバックを表示
-    if user_answer == correct_pos:
-        st.success("正解です！")
-        st.session_state.quest_completed = True
-        st.session_state.selected_word = {'単語': word, '品詞': correct_pos}
-        
-    else:
-        st.error(f"不正解です。正解は「{correct_pos}」です。")
-
 def draw_gacha():
         st.write('英単語をランダムに表示して、勉強をサポートします！')
         st.write('がんばってください！')
@@ -106,12 +72,47 @@ def draw_gacha():
                 else:
                     st.write("日本文がありません")
 
+def question():
+    st.title('英単語クイズ')
+    st.write("この単語の品詞は何でしょう？")
+
+    # Load the data
+    @st.cache
+    def word_data():
+        return pd.read_excel("ブック.xlsx")
+
+    def get_random_word(df):
+        # ランダムに単語を選ぶ
+        row = df.sample(n=1).iloc[0]
+        word = row['単語']
+        pos = row['品詞']
+        return word, pos
+
+    file_path ='ブック.xlsx'
+    word_data = pd.read_excel(file_path)
+
+    word, correct_pos = get_random_word(word_data)
+
+    st.write(f"単語: {word}")
+
+    user_answer = st.radio("この単語の品詞は？", ['動詞', '形容詞', '副詞'],key="radio")
+
+    # 回答のチェックとフィードバックを表示
+    if user_answer == correct_pos:
+        st.success("正解です！")
+        st.session_state.quest_completed = True
+        st.session_state.selected_word = {'単語': word, '品詞': correct_pos}
+        draw_gacha()
+        
+    else:
+            st.error(f"不正解です。正解は「{correct_pos}」です。")
+
+
+
 def main():
         st.header("英検準二級英単語ガチャ")
-
         question()
-        if st.session_state.quest_completed:
-            draw_gacha()
+        
 
         
 if __name__ == "__main__":
