@@ -7,12 +7,9 @@ import streamlit as st
 if 'quest_completed' not in st.session_state:
     st.session_state.quest_completed = False
 
-if 'display_meaning' not in st.session_state:
-    st.session_state.display_meaning = False  # デフォルト値で初期化
-
 if 'selected_word' not in st.session_state:
     st.session_state.selected_word = None
-
+    st.session_state.display_meaning = False
 
 st.set_page_config(page_title="英検準二級英単語ガチャ")
 
