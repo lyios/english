@@ -83,18 +83,19 @@ def question():
 
     def get_random_word(df):
 
-        row = df.sample(n=1).iloc[0]
-        word = row['単語']
-        pos = row['品詞']
-        return word, pos
+        if st.button('単語を表示する'):
+
+            row = df.sample(n=1).iloc[0]
+            word = row['単語']
+            pos = row['品詞']
+            return word, pos
 
     file_path ='ブック.xlsx'
     word_data = pd.read_excel(file_path)
 
     word, correct_pos = get_random_word(word_data)
 
-    if st.button('単語を表示する'):
-        st.write(f"単語: {word}")
+    st.write(f"単語: {word}")
 
     all_pos = ['動詞', '形容詞', '副詞']
     
