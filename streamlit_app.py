@@ -72,10 +72,10 @@ def draw_gacha():
             st.session_state.selected_word = selected_word
             st.session_state.display_meaning = False
 
-if 'selected_word' in st.session_state and st.session_state.selected_word is not None:
-        selected_word = st.session_state.selected_word
-        st.header(f"単語名: {st.session_state.selected_word['単語','不明']}")
-        st.subheader(f"レア度: {st.session_state.selected_word['レア度','不明']}")
+        if 'selected_word' in st.session_state and st.session_state.selected_word is not None:
+            selected_word = st.session_state.selected_word
+            st.header(f"単語名: {st.session_state.selected_word['単語','不明']}")
+            st.subheader(f"レア度: {st.session_state.selected_word['レア度','不明']}")
    
         # 意味を確認するボタンを追加
         if st.button('意味を確認する'):
