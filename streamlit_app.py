@@ -115,15 +115,8 @@ def question():
     st.write("この単語の品詞は何でしょう？")
 
     # Load the data
-    @st.cache
-    def word_data():
-        return pd.read_excel("ブック.xlsx")
+    word_data = load_data("ブック.xlsx")
     
-    file_path ='ブック.xlsx'
-    word_data = pd.read_excel(file_path)
-
-    word, correct_pos = get_random_word(word_data)
-
     if st.session_state.current_word is None:
         st.session_state.current_word, st.session_state.correct_pos = get_random_word(word_data)
         st.session_state.question_displayed = False
@@ -150,14 +143,14 @@ def question():
 
     # 回答のチェックとフィードバックを表示
     if st.button("決定"):
-        if user_answer == correct_pos:
+        if user_answer == st.session_state.correct_pos:
             st.success("正解です！")
             st.session_state.quest_completed = True
             st.session_state.selected_word = {'単語': st.session_state.current_word, '品詞': st.session_state.correct_pos}
             draw_gacha()
         
         else:
-            st.error(f"不正解です。正解は「{correct_pos}」です。")
+            st.error(f"不正解です。正解は「{st.session_state.correct_pos}」です。")
 
 def main():
         st.header("品詞クイズに正解すると、英単語ガチャを引けます。")
