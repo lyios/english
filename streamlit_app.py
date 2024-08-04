@@ -92,6 +92,12 @@ def draw_gacha():
             else:
                 st.write("日本文がありません")
 
+if st.button("次の問題"):
+    st.session_state.current_word = None
+    st.session_state.correct_pos = None
+    st.session_state.question_displayed = False
+
+
 def load_data(file_path):
     return pd.read_excel(file_path)
 
@@ -148,13 +154,6 @@ def question():
         
         else:
             st.error(f"不正解です。正解は「{correct_pos}」です。")
-
-        if st.button("次の問題"):
-            st.session_state.current_word = None
-            st.session_state.correct_pos = None
-            st.session_state.question_displayed = False
-
-
 
 def main():
         st.header("品詞クイズに正解すると、英単語ガチャを引けます。")
