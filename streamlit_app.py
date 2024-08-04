@@ -19,6 +19,9 @@ if 'selected_word' not in st.session_state:
 if 'display_meaning' not in st.session_state:
     st.session_state.display_meaning = False
 
+if 'question_displayed' not in st.session_state:
+    st.session_state.question_displayed = False
+
 
 st.set_page_config(page_title="品詞クイズと英単語ガチャ")
 
@@ -144,6 +147,12 @@ def question():
         
         else:
             st.error(f"不正解です。正解は「{correct_pos}」です。")
+
+        if st.button("次の問題"):
+            st.session_state.current_word = None
+            st.session_state.correct_pos = None
+            st.session_state.question_displayed = False
+
 
 
 def main():
