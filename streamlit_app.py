@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
 
 # セッション状態の初期化
 if 'quest_completed' not in st.session_state:
@@ -108,9 +109,11 @@ def question():
 
     st.write(f"単語: {word}")
 
+    with st.spinner('少々お待ちください...'):
+        time.sleep(5)  # 5秒待機
+
+
     all_pos = ['動詞', '形容詞', '副詞']
-    
-        # 正解の品詞を選択肢に含める
     options = list(set(all_pos) - {correct_pos})
     options.append(correct_pos)
     np.random.shuffle(options)  # 選択肢をシャッフル
