@@ -4,6 +4,12 @@ import numpy as np
 import time
 
 # セッション状態の初期化
+if 'current_word' not in st.session_state:
+    st.session_state.current_word = None
+
+if 'correct_pos' not in st.session_state:
+    st.session_state.correct_pos = None
+    
 if 'quest_completed' not in st.session_state:
     st.session_state.quest_completed = False
 
@@ -106,6 +112,10 @@ def question():
     word_data = pd.read_excel(file_path)
 
     word, correct_pos = get_random_word(word_data)
+
+    if st.session_state.current_word is None:
+        st.session_state.current_word, st.session_state.correct_pos = get_random_word(word_data)
+
 
     st.write(f"単語: {word}")
 
