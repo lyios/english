@@ -127,7 +127,7 @@ def question():
     st.write(f"単語: {st.session_state.current_word}")
 
     with st.spinner('少々お待ちください...'):
-        time.sleep(5)  # 5秒待機
+        time.sleep(2)  
 
     all_pos = ['動詞', '形容詞', '副詞']
     options = list(set(all_pos) - {st.session_state.correct_pos})
