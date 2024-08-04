@@ -124,6 +124,7 @@ def question():
 
     with st.spinner('少々お待ちください...'):
         time.sleep(5)  # 5秒待機
+    st.session_state.question_displayed = True
 
 
     all_pos = ['動詞', '形容詞', '副詞']
