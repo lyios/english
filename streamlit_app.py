@@ -65,7 +65,7 @@ def draw_gacha():
             st.session_state.selected_word = selected_word
             st.session_state.display_meaning = False
         
-        if st.session_state.gacha_word is not None:
+        if 'selected_word' in st.session_state and st.session_state.selected_word is not None:
             st.header(f"単語名: {st.session_state.selected_word['単語']}")
             st.subheader(f"レア度: {st.session_state.selected_word['レア度']}")
    
