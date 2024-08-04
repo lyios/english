@@ -22,6 +22,8 @@ if 'display_meaning' not in st.session_state:
 if 'question_displayed' not in st.session_state:
     st.session_state.question_displayed = False
 
+if 'options' not in st.session_state:
+    st.session_state.options = []
 
 st.set_page_config(page_title="品詞クイズと英単語ガチャ")
 
@@ -132,12 +134,13 @@ def question():
         time.sleep(5)  # 5秒待機
 
     all_pos = ['動詞', '形容詞', '副詞']
-    options = list(set(all_pos) - {correct_pos})
-    options.append(correct_pos)
-    np.random.shuffle(options)  # 選択肢をシャッフル
+    options = list(set(all_pos) - {st.session_state.correct_pos})
+    options.append(st.session_state.correct_pos)
 
+        # シャッフルせずに固定の順序で表示
     st.session_state.options = options
     st.session_state.question_displayed = True
+
 
     user_answer = st.radio(
         "この単語の品詞は？",
