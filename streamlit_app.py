@@ -10,14 +10,15 @@ if 'quest_completed' not in st.session_state:
 if 'selected_word' not in st.session_state:
     st.session_state.selected_word = None
 
-if 'gacha_word' not in st.session_state:
-    st.session_state.gacha_word = None
-
 if 'display_meaning' not in st.session_state:
     st.session_state.display_meaning = False
 
 
 st.set_page_config(page_title="品詞クイズと英単語ガチャ")
+
+def load_data(file_path):
+    return pd.read_excel(file_path)
+
 
 def draw_gacha():
         st.write('英単語をランダムに表示して、勉強をサポートします！')
