@@ -27,6 +27,13 @@ if 'options' not in st.session_state:
 
 st.set_page_config(page_title="品詞クイズと英単語ガチャ")
 
+def load_word_data():
+    return pd.read_excel("ブック.xlsx")
+
+def load_gacha_data():
+    return pd.read_excel("a.xlsx")
+
+
 def load_data(file_path):
     return pd.read_excel(file_path)
 
