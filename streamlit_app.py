@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import streamlit as st
 
 # セッション状態の初期化
 if 'quest_completed' not in st.session_state:
