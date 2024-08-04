@@ -126,7 +126,7 @@ def question():
         st.session_state.current_word, st.session_state.correct_pos = get_random_word(word_data)
         st.session_state.question_displayed = False
 
-    st.write(f"単語: {word}")
+    st.write(f"単語: {st.session_state.current_word}")
 
     with st.spinner('少々お待ちください...'):
         time.sleep(5)  # 5秒待機
