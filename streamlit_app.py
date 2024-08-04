@@ -130,13 +130,14 @@ def question():
 
     with st.spinner('少々お待ちください...'):
         time.sleep(5)  # 5秒待機
-    st.session_state.question_displayed = True
-
 
     all_pos = ['動詞', '形容詞', '副詞']
     options = list(set(all_pos) - {correct_pos})
     options.append(correct_pos)
     np.random.shuffle(options)  # 選択肢をシャッフル
+
+    st.session_state.options = options
+    st.session_state.question_displayed = True
 
     user_answer = st.radio(
         "この単語の品詞は？",
