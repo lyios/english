@@ -82,6 +82,16 @@ def draw_gacha():
             else:
                 st.write("日本文がありません")
 
+def load_data(file_path):
+    return pd.read_excel(file_path)
+
+def get_random_word(df):
+    # ランダムに単語を選ぶ
+    row = df.sample(n=1).iloc[0]
+    word = row['単語']
+    pos = row['品詞']
+    return word, pos
+
 def question():
     st.title('品詞クイズ')
     st.write("この単語の品詞は何でしょう？")
@@ -90,14 +100,7 @@ def question():
     @st.cache
     def word_data():
         return pd.read_excel("ブック.xlsx")
-
-    def get_random_word(df):
-        # ランダムに単語を選ぶ
-        row = df.sample(n=1).iloc[0]
-        word = row['単語']
-        pos = row['品詞']
-        return word, pos
-
+    
     file_path ='ブック.xlsx'
     word_data = pd.read_excel(file_path)
 
