@@ -123,7 +123,7 @@ def question():
     st.write("この単語の品詞は何でしょう？")
 
     # Load the data
-    word_data = load_data("ブック.xlsx")
+    word_data = load_word_data()
     
     if st.session_state.current_word is None:
         st.session_state.current_word, st.session_state.correct_pos = get_random_word(word_data)
