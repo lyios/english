@@ -161,6 +161,10 @@ def question():
             st.error(f"不正解です。正解は「{st.session_state.correct_pos}」です。")
 
 def main():
+    if st.session_state.quest_completed:
+        draw_gacha()
+
+def main():
         st.header("品詞クイズに正解すると、英単語ガチャを引けます。")
         question()
 
