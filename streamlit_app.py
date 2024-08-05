@@ -74,22 +74,22 @@ def draw_gacha():
 
         if 'selected_word' in st.session_state and st.session_state.selected_word is not None:
             selected_word = st.session_state.selected_word
-            st.header(f"単語名: {st.session_state.selected_word('単語','不明')}")
-            st.subheader(f"レア度: {st.session_state.selected_word('レア度','不明')}")
+            st.header(f"単語名: {st.session_state.selected_word('単語')}")
+            st.subheader(f"レア度: {st.session_state.selected_word('レア度')}")
    
         # 意味を確認するボタンを追加
         if st.button('意味を確認する'):
                 st.session_state.display_meaning = True
 
         if st.session_state.display_meaning:
-                st.write(f"日本語訳: {st.session_state.selected_word('日本語訳','不明')}")
+                st.write(f"日本語訳: {st.session_state.selected_word('日本語訳')}")
 
         if st.button('英文を見る'):
                 st.session_state.display_meaning = 'english'
 
         if st.session_state.display_meaning == 'english':
             if '英文' in st.session_state.selected_word:
-                st.write(f"英文: {st.session_state.selected_word('英文','不明')}")
+                st.write(f"英文: {st.session_state.selected_word('英文')}")
             else:
                 st.write("英文がありません")
 
@@ -98,7 +98,7 @@ def draw_gacha():
 
         if st.session_state.display_meaning == 'japanese':
             if '日本文' in st.session_state.selected_word:
-                st.write(f"日本文: {st.session_state.selected_word('日本文','不明')}")
+                st.write(f"日本文: {st.session_state.selected_word('日本文')}")
             else:
                 st.write("日本文がありません")
 
