@@ -101,7 +101,7 @@ def draw_gacha():
             else:
                 st.write("日本文がありません")
 
-        st.write("ダブルクリック")
+        st.write("↓ダブルクリック")
         if st.button("次の問題"):
             st.session_state.current_word = None
             st.session_state.correct_pos = None
