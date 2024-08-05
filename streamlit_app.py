@@ -156,9 +156,9 @@ def question():
             st.success("正解です！")
             st.session_state.quest_completed = True
             st.session_state.selected_word = {'単語': st.session_state.current_word, '品詞': st.session_state.correct_pos}
-            
+
             st.write("品詞クイズに正解しました！ガチャを引いてください。")
-            st.session_state.current_word = None
+            st.experimental_rerun() 
 
         else:
             st.error(f"不正解です。正解は「{st.session_state.correct_pos}」です。")
