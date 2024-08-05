@@ -129,6 +129,7 @@ def question():
     if st.session_state.current_word is None:
         st.session_state.current_word, st.session_state.correct_pos = get_random_word(word_data)
         st.session_state.question_displayed = False
+        st.session_state.quiz_words = []
 
     st.write(f"単語: {st.session_state.current_word}")
 
@@ -157,7 +158,7 @@ def question():
             st.session_state.quest_completed = True
             st.session_state.selected_word = {'単語': st.session_state.current_word, '品詞': st.session_state.correct_pos}
             draw_gacha()
-            
+
             st.session_state.question_displayed = False  
 
         else:
