@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import time
 
 # セッション状態の初期化
 if 'current_word' not in st.session_state:
@@ -131,9 +130,7 @@ def question():
         st.session_state.question_displayed = False
         st.session_state.quiz_words = []
 
-    st.write(f"単語: {st.session_state.current_word}")
-    with st.spinner('少々お待ちください...'):
-        time.sleep(1)  
+    st.write(f"単語: {st.session_state.current_word}")  
 
     all_pos = ['動詞', '形容詞', '副詞']
     options = list(set(all_pos) - {st.session_state.correct_pos})
