@@ -159,7 +159,7 @@ def question():
             st.session_state.question_displayed = False  
 
         else:
-            st.error(f"不正解です。正解は「{st.session_state.correct_pos}」です。")
+            st.error(f"不正解です。")
 
 def main():
     if st.session_state.quest_completed:
