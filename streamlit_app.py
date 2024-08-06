@@ -138,7 +138,6 @@ def question():
     options = list(set(all_pos) - {st.session_state.correct_pos})
     options.append(st.session_state.correct_pos)
 
-        # シャッフルせずに固定の順序で表示
     st.session_state.options = options
     st.session_state.question_displayed = True
 
