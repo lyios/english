@@ -92,7 +92,7 @@ def draw_gacha():
             else:
                 st.write("英文がありません")
 
-        if st.button('日本文を見る'):
+        if st.button('日本語訳を見る'):
                 st.session_state.display_meaning = 'japanese'
 
         if st.session_state.display_meaning == 'japanese':
