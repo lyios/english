@@ -51,7 +51,7 @@ def draw_gacha():
         subset_df = pd.DataFrame() 
 
     # ガチャ機能
-        st.write("ガチャを引くボタンを押してください")
+        st.write("ガチャを引くボタンを押してください！")
         if st.button('ガチャを引く！'):
             if st.session_state.selected_word is None:
                 return
