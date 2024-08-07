@@ -101,6 +101,15 @@ def draw_gacha():
             else:
                 st.write("日本文がありません")
 
+        if st.button('カタカナ表記を見る'):
+                st.session_state.display_meaning = 'katakana'
+
+        if st.session_state.display_meaning == 'katakana':
+            if 'カタカナ表記' in st.session_state.selected_word:
+                st.write(f"{st.session_state.selected_word.get('カタカナ表記','不明')}")
+            else:
+                st.write("カタカナ表記がありません")
+
         st.write("↓ダブルクリック")
         if st.button("次の問題"):
             st.session_state.current_word = None
