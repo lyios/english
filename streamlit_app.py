@@ -54,7 +54,6 @@ def draw_gacha():
         st.write("ガチャを引くボタンを押してください")
         if st.button('ガチャを引く！'):
             if st.session_state.selected_word is None:
-                st.warning("品詞クイズに正解するまでガチャは引けません。")
                 return
             
             rarity_probs = {
