@@ -81,7 +81,7 @@ def draw_gacha():
                 st.session_state.display_meaning = True
 
         if st.session_state.display_meaning:
-                st.write(f"日本語訳: {st.session_state.selected_word.get('日本語訳','不明')}")
+                st.write(f"意味: {st.session_state.selected_word.get('意味','不明')}")
 
         if st.button('英文を見る'):
                 st.session_state.display_meaning = 'english'
@@ -96,10 +96,10 @@ def draw_gacha():
                 st.session_state.display_meaning = 'japanese'
 
         if st.session_state.display_meaning == 'japanese':
-            if '日本文' in st.session_state.selected_word:
-                st.write(f"日本文: {st.session_state.selected_word.get('日本文','不明')}")
+            if '日本語訳' in st.session_state.selected_word:
+                st.write(f"日本語訳: {st.session_state.selected_word.get('日本語訳','不明')}")
             else:
-                st.write("日本文がありません")
+                st.write("日本語訳がありません")
 
         st.write("↓ダブルクリック")
         if st.button("次の問題"):
